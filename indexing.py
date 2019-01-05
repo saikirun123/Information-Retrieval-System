@@ -1,3 +1,6 @@
+"""
+    Author: Narayana Shanmukha Venkat
+"""
 #installing dependencies
 import os
 import re
@@ -7,8 +10,9 @@ from nltk.stem.porter import *
 
 dir_input = input("Name of directory ::")
 files = os.listdir(dir_input)
-print(files)
-
+print('Files to be processed:-')
+for file in files:
+    print(file)
 #The words to be removed will typically include words that often do not confer much semantic value
 #Additionally, NLTK allows one to add his/her custom stop words
 
@@ -35,10 +39,10 @@ for document in files:
 
     for word in doc:
             if word.isalnum():
-                clean.append(word)
+                clean.append(word.lower())
             else:
                 #appending unicode character(s) that are not alphanumeric
-                clean.append(u''.join(word))
+                clean.append(u''.join(word.lower()))
 
     #Stemming is the process of reducing words to their word stem.
     #Stemmers remove morphological affixes from words, leaving only the word stem.
