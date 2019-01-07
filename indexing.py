@@ -1,6 +1,7 @@
 """
     Author: Narayana Shanmukha Venkat
 """
+#!/usr/bin/env python
 #installing dependencies
 import re,nltk
 from nltk.corpus import stopwords
