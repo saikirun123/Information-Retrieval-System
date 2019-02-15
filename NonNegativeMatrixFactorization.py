@@ -62,7 +62,7 @@ print(nmfmodel.get_document_topics(vec_bow))
 #print(nmfmodel._h)
 print(np.array(nmfmodel._W).shape)
 print(np.array(nmfmodel._h).shape)
-print(nmfmodel._w_max_iter) #vec_lsi2 = lsi[vec_bow]
+#print(nmfmodel._w_max_iter) #vec_lsi2 = lsi[vec_bow]
 #sims = index[vec_lsi2]
 #sims = sorted(enumerate(sims), key=lambda item: -item[1])
 #cm2 = CoherenceModel(model=nmfmodel, corpus=corpus, coherence='u_mass')
