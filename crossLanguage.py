@@ -1,8 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Created on Mon Jan 14 19:27:58 2019
-
+INFORMATION RETRIEVAL IN INDIAN LANGUAGE(HINDI)
 @author: narayanashanmukhavenkat
 """
 import numpy as np
@@ -55,11 +54,7 @@ sims = index[vec_lsi2]
 sims = sorted(enumerate(sims), key=lambda item: -item[1])
 
 print(sims)
-#cm2 = CoherenceModel(model=nmfmodel, corpus=corpus, coherence='u_mass')
-#coherence = cm2.get_coherence()
-#print('#####################################################')
-#print(coherence)  
-#print(sims)'''
+
 
 
 
