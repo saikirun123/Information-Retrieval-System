@@ -11,14 +11,14 @@ from gensim import corpora, models, similarities, matutils
 from gensim.models import lsimodel, nmf
 from gensim.models.coherencemodel import CoherenceModel 
 
-documents = []
+documents = list()
 
 for counter in range(1033):
     temp = open(str(counter+1)+".txt", 'r')
     documents.append(temp.read())
     temp.close()
 
-stop_words = stopwords.words('english')
+stop_words = stopwords.words("english")
 
 texts = [[word for word in document.lower().split() if word not in stop_words] for document in documents]
 
@@ -38,18 +38,19 @@ corpora.MmCorpus.serialize('/tmp/ir.mm', corpus)
 #print(np.shape(np.array(lsi[corpus])))
 #np.matmul(np.matmul(np.array(lsi.projection.u), np.array(lsi.projection.s)),np.array(matutils.corpus2dense(lsi[corpus], len(lsi.projection.s)).T / lsi.projection.s)) 
 #index = similarities.MatrixSimilarity(lsi[corpus])
-doc = "medicosocial studies of hemophilia"
+doc = "liver bladder desctruction"
 vec_bow = dictionary.doc2bow(doc.lower().split())
 f = open("output.txt", "a")
-#for i in range(0, lsi.num_topics):
-#    print(lsi.print_topic(i,10))
-#vec_lsi1 = lsi[vec_bow]
-#sims = index[vec_lsi1]
-#sims = sorted(enumerate(sims), key=lambda item: -item[1])
-#cm1 = CoherenceModel(model=lsi, corpus=corpus, coherence='u_mass')
-#coherence = cm1.get_coherence()
-#print('#####################################################')
-#print(coherence)     
+"""
+for i in range(0, lsi.num_topics):
+   print(lsi.print_topic(i,10))
+vec_lsi1 = lsi[vec_bow]
+sims = index[vec_lsi1]
+sims = sorted(enumerate(sims), key=lambda item: -item[1])
+cm1 = CoherenceModel(model=lsi, corpus=corpus, coherence='u_mass')
+coherence = cm1.get_coherence()
+print('#####################################################')
+print(coherence)     """
 
 #print(sims)
 nmfmodel = nmf.Nmf(corpus, num_topics=43, id2word = dictionary, normalize =True)
